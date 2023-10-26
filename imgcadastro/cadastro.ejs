@@ -24,9 +24,10 @@
     }
 
     .dropdown-item {
-        margin-left: -1000px;
+        margin-left: -10rem;
         color: rgb(43, 177, 226);
     }
+        
 
     body {
         background-color: rgb(255, 255, 255);
@@ -188,14 +189,21 @@
         color: #000000c0;
     }
 
+    .continue-button {
+        display: flex;
+        text-align: center;
+        margin-top: 1.6rem;
+        margin-right: -0.08rem;
+    }
+
     .continue-button button {
-        width: 100%;
-        margin-top: 2.5rem;
+        width: 13rem;
+        height: 3rem;
         border: none;
         background-color: rgb(68, 151, 190);
         ;
-        padding: 0.62rem;
-        border-radius: 5px;
+        padding: 0.70rem;
+        border-radius: 6px;
         cursor: pointer;
     }
 
@@ -206,7 +214,7 @@
 
     .continue-button button a {
         text-decoration: none;
-        font-size: 0.93rem;
+        font-size: 1rem;
         font-weight: 500;
         color: #fff;
     }
@@ -290,7 +298,7 @@
                 </a>
             </div>
             <div class="dropdown" bg-info>
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                <button type="button" class="btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                     Menu
                 </button>
                 <ul class="dropdown-menu">
@@ -339,20 +347,16 @@
 
                 <div class="input-box">
                     <label for="senha">Senha</label>
-                    <input type="text" name="senha" placeholder="Digite sua senha"
-                        required>
+                    <input type="text" name="senha" placeholder="Digite sua senha" required>
+                </div>
+                <div class="continue-button">
+                    <button type="submit">Cadastrar</button>
                 </div>
             </div>
 
-            </div>
         </div>
-
-
-        <div class="continue-button">
-            <button type="submit">Cadastrar</button>
-    
-        </div>
-        </form>
+    </div>
+    </form>
     </div>
     </div>
 
