@@ -21,11 +21,8 @@
     }
 
     #calendar {
-         max-width: 350px; /* Reduzi a largura máxima para torná-lo um pouco menor */
-         margin-left: 50px;
-         right: 500px;
-         margin-bottom: 55px;
-            
+            max-width: 300px; /* Reduzi a largura máxima para torná-lo um pouco menor */
+            margin: 0 auto;
         }
 
         /* Adicione um estilo para o "X" */
@@ -35,15 +32,6 @@
             font-weight: bold;
             font-size: 16px;
         }
-
-.buttons{
-    margin: 20px;
-    margin-top: 30px;
-    left:40 px;
-}
-.container mt-3{ margin: 200px;
-
-}
 </style>
 <head>
     <meta charset='utf-8' />
@@ -75,6 +63,7 @@
 <div class="container-fluid">
     <img src="https://github.com/bgaby7/medicalg/blob/main/imagens.paci/Captura%20de%20tela%202023-10-19%20153322.png?raw=true" class="mx-auto d-block" style="width:100%"> 
  </div>
+<br>
 <body> 
     <div class="mt-4 p-5 bg-primary bg-light text-blue rounded">
         <center>
@@ -122,14 +111,72 @@ Com sua vasta experiência e habilidades diagnósticas aprimoram a qualidade dos
       <br>
  </div>         
 </body>
-    <br>
-    <div id='calendar'></div>
-   <div class="buttons">
-    <input type="text" id="eventInput" placeholder="Novo evento">
-   <button class="addEvent">Adicionar Evento</button>
-      <button class="removeEvent">Remover Evento</button>
+<center>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Agende
+  </button>
+  
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">AGENDE PELOS TELEFONES</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body">
+            <p>São Paulo - Lapa: 11 2222.1090</p>
+            <p>WhatsApp São Paulo - Lapa: 11 9987-4513</p>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fechar</button>
+        </div>
+      </div>
     </div>
-
+  </div>
+  <button type="button" class="btn btn-primary">Planos</button>
+  <a href="planos.ejs"></a>
+  
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">
+    Prontuário
+  </button>
+  
+  <div class="modal" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">Deixe seu arquivo aqui</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body">
+            <a href="caminho_do_arquivo/arquivo.extensao" download>Nome do Arquivo</a>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+<br>
+<div class="container">
+    <div class="d-grid">
+        <button type="button" class="btn btn-outline-primary">Exames</button>
+    </div>
+</div>
+<br>
+<div class="container">
+    
+    <div id='calendar'></div>
+    <input type="text" id="eventInput" placeholder="Novo evento">
+    <button id="addEvent">Adicionar Evento</button>
+    <button id="removeEvent">Remover Evento</button>
+    </div>
     <script>
         var events = [];
 
@@ -205,70 +252,14 @@ Com sua vasta experiência e habilidades diagnósticas aprimoram a qualidade dos
                 $('#calendar').fullCalendar('removeEvents', event._id);
             }
         });
-    
     </script>
-     <div class="container" style="width: 600px; height: 500px; margin-top: -350px; margin-left: 600px;">
-     <div class="d-grid"> 
-        <button type="button" class="btn btn-info btn-block" data-bs-toggle="modal" data-bs-target="#myModal">
-        Agende
-      </button>
-      
-      <div class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-      
-            <div class="modal-header">
-              <h4 class="modal-title">AGENDE PELOS TELEFONES</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-      
-            <div class="modal-body">
-                <p>São Paulo - Lapa: 11 2222.1090</p>
-                <p>WhatsApp São Paulo - Lapa: 11 9987-4513</p>
-            </div>
-      
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fechar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    <br>
-      <button type="button" class="btn btn-info btn-block">Planos</button>
-      <a href="planos.ejs"></a>
-<br>
-<button type="button" class="btn btn-info btn-block" data-bs-toggle="modal" data-bs-target="#myModal2">
-    Prontuário
-  </button>
-  
-  <div class="modal" id="myModal2">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <div class="modal-header">
-          <h4 class="modal-title">Deixe seu arquivo aqui</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <div class="modal-body">
-            <a href="caminho_do_arquivo/arquivo.extensao" download>Nome do Arquivo</a>
-        </div>
-  
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fechar</button>
-        </div>
-      </div>
-     </div>
-    </div>
-    <br>
-    <button type="button" class="btn btn-info btn-block">Exames</button>
-        </div>
 </div>
-
+<br>
+<br>
 <footer>
     <p>&copy; 2023 Medical Group - Todos os direitos reservados.</p>
     <p>Entre em contato: hospital.medicalup@gmail.com</p>
     <a href="#">Política de Privacidade</a>
     <a href="#">Termos de Serviço</a>
-  </footer>
+</footer>
 </html>
