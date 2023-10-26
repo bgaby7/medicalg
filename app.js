@@ -9,7 +9,7 @@ const port = 3000;
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'phpmyadmin',
-  password: 'aluno',
+  password: 'phpmyadmin',
   database: 'medical'
 });
 
@@ -32,9 +32,9 @@ app.get('/', (req, res) => {
 
 // CREATE
 app.post('/add', (req, res) => {
-  const { name, email } = req.body;
-  const sql = 'INSERT INTO users (name, email) VALUES (?, ?)';
-  db.query(sql, [name, email], (err, result) => {
+  const { name, email, CPF, celular, senha } = req.body;
+  const sql = 'INSERT INTO users (name, email, CPF, celular, senha ) VALUES (?, ?, ?, ?, ?)';
+  db.query(sql, [name, email, CPF, celular, senha], (err, result) => {
     if (err) throw err;
     res.redirect('/');
   });
